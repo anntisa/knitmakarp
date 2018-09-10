@@ -34,3 +34,6 @@ The routerLink is the selector for the RouterLink directive
 
 the `+` converts a string to a number
  ex) `+this.route.snapshot.paramMap.get('id')`
+
+MediaQueries
+https://www.w3schools.com/css/css3_mediaqueries_ex.asp

@@ -1,8 +1,19 @@
-<h3>Top Items</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let item of items" class="col-1-4" routerLink="/item-detail/{{item.id}}">
+<div class="landing-view">
+  <img class="landing-image" src="../../assets/home-magikarp.jpg">
+  <h1 class="missy-font">{{title}}</h1>
+
+  <div class="social-media-group">
+    <img class="social-media-icon" src="../../assets/logo/if_instagram-round-flat_1620009.svg"/>
+    <img class="social-media-icon" src="../../assets/logo/if_facebook_386622.svg"/>
+    <img class="social-media-icon" src="../../assets/logo/if_etsy_386620.svg"/>
+    <img class="social-media-icon" src="../../assets/logo/if_instagram-square-flat-2_1620013.svg"/>
+  </div>
+
+</div>
+<div class="shop">
+  <div *ngFor="let item of items" class="col-1-4" routerLink="/item-detail/{{item.id}}">
     <div class="module item">
       <h4>{{item.name}}</h4>
     </div>
-  </a>
+  </div>
 </div>

@@ -1,0 +1,26 @@
+<div id="header">
+  <button mat-button routerLink="/home">
+    <span class="missy-font header-font">{{title}}</span>
+  </button>
+  <span class="right">
+    <button mat-button routerLink="/item-list">
+      <span class="header-font"> Item </span>
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item>Help</button>
+    </mat-menu>
+  </span>
+</div>
+
+<!-- <div id="header">
+  <a class="missy-font" routerLink="/home">{{ title }}</a>
+  <a routerLink="/item-list">Items</a>
+  <a mat-raised-button color="primary" routerLink="/checkout" class="btn btn-primary btn-checkout">
+    <i class="fas fa-shopping-cart"></i>
+  </a>
+</div> -->
