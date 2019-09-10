@@ -1,0 +1,13 @@
+a {
+    display: contents;
+    color: gray;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    object-fit: cover;
+}
