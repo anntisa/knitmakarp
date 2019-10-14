@@ -2,58 +2,54 @@ import React from "react";
 import CardDeck from "react-bootstrap/CardDeck";
 import Card from 'react-bootstrap/Card';
 import './ItemList.css';
+import * as firebase from "firebase/app";
+import "firebase/database";
 
+class ItemList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cards: {},
+        }
+    }
 
-function ItemList() {
-    return (
-        <CardDeck>
-            <Card>
-                <Card.Link href="/item">
-                    <Card.Img variant="top" src={require("./images/main-magikarp-hat.jpg")} />
-                    <Card.Body>
-                        <Card.Title>Magikarp Knitted Hat</Card.Title>
-                        <Card.Text>
-                            handcrafted and designed by KnitMaKarp.
-                        </Card.Text>
+    componentDidMount() {
+       const database = firebase.database();
+       database.ref('/item-list').once('value', (snapshot) => {
+           this.setState({cards: snapshot.val()});
+       });
+    }
 
-                    </Card.Body>
-                    <Card.Footer>
-                        $50
-                    </Card.Footer>
-                </Card.Link>
-            </Card>
+    render() {
+        let cardList = [];
+        for (let key in this.state.cards) {
+            const card = this.state.cards[key];
 
-            <Card>
-                <Card.Link href="/item">
-                    <Card.Img variant="top" src={require("./images/main-shiny-magikarp.jpg")} />
-                    <Card.Body>
-                        <Card.Title>Shiny Magikarp Knitted Hat</Card.Title>
-                        <Card.Text>
-                            The shiny version of the Magikarp Knitted Hat
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer variant="bottom">
-                        $100
-                    </Card.Footer>
-                </Card.Link>
-            </Card>
-            <Card>
-                <Card.Link href="/item">
-                    <Card.Img variant="top" src={require("./images/main-snorlax.jpg")} />
-                    <Card.Body>
-                        <Card.Title>Snorlax Hat (EyeMask)</Card.Title>
-                        <Card.Text>
-                            Hat in the shape of snorlax's head. Can be used as an eyemask.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        $50
-                    </Card.Footer>
-                </Card.Link>
-            </Card>
-        </CardDeck>
+            cardList.push(
+                <Card key={key}>
+                    <Card.Link href="/item">
+                        <Card.Img variant="top" src={require("./images/"+card.image)} />
+                        <Card.Body>
+                            <Card.Title>{card.name}</Card.Title>
+                            <Card.Text>
+                                {card.description}
+                            </Card.Text>
 
-    )
-};
+                        </Card.Body>
+                        <Card.Footer>
+                            ${card.total}
+                        </Card.Footer>
+                    </Card.Link>
+                </Card>
+            );
+        }
+
+        return (
+            <CardDeck>
+                {cardList}
+            </CardDeck>
+        );
+    }
+}
 
 export default ItemList;

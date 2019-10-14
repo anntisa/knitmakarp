@@ -49,6 +49,8 @@ Thumbs.db
 
 # production
 /build
+/.firebase
+/src/init-firebase.js
 
 # misc
 .DS_Store
