@@ -27,7 +27,7 @@ class ItemList extends React.Component {
 
             cardList.push(
                 <Card key={key}>
-                    <Card.Link href="/item">
+                    <Card.Link href={"/item/"+key}>
                         <Card.Img variant="top" src={require("./images/"+card.image)} />
                         <Card.Body>
                             <Card.Title>{card.name}</Card.Title>
