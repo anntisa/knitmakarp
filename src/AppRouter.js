@@ -14,7 +14,7 @@ function AppRouter() {
         <Router>
             <Route exact path="/" component={Home} />
             <Route path="/item-list" component={ItemList} />
-            <Route path="/item" component={Item} />
+            <Route path="/item/:itemId" component={Item} />
         </Router>
     </div>
 

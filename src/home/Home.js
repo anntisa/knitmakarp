@@ -1,6 +1,5 @@
 import React from "react";
 import "./Home.css";
-import * as firebase from "firebase/app";
 import "firebase/analytics";
 
 function Home() {
