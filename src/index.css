@@ -1,15 +1,104 @@
+html,
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    letter-spacing: 1px;
+    font-family: 'Sunflower', sans-serif;
+    min-height: 100%;
+}
+
+body a {
+    outline: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    text-decoration: none;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+body a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+input[type="button"],
+input[type="submit"] {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    letter-spacing: 1px;
+    font-family: 'Sunflower', sans-serif;
+}
+
+select, input[type="email"], input[type="text"], input[type=password],
+input[type="button"], input[type="submit"], textarea {
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sunflower', sans-serif;
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/*-- //Reset-Code --*/
+.title {
+    font-size: 44px;
+    color: #000;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.clr {
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
 @import-normalize;
